@@ -3,27 +3,21 @@
   hosts: all
 
   tasks:
-  - name: install prerequisites
+  - name: Install prerequisites
     package:
       name:
       - vim
       - git
       state: present
 
-  - name: install Python
+  - name: Install Python
     package:
       name: 
       - python3
       - python3-pip
       state: present
 
-  - name: start httpd
-    systemd:
-      name: httpd
-      state: started
-      enabled: yes
-
-  - name: pull Flaskex
+  - name: Pull Flaskex
     git:
       repo: "{{ flaskex_repo }}"
       version: "{{ flaskex_branch }}"
