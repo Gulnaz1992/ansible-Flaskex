@@ -1,6 +1,5 @@
 ---
-- name: Pull repo
-  hosts: all
+- hosts: all
 
   - name: Pull Flaskex
     git:

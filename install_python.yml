@@ -1,6 +1,5 @@
 ---
-- name: Install Flaskex
-  hosts: all
+- hosts: all
 
   - name: Install requirements
     pip:
