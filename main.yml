@@ -29,7 +29,7 @@
 
   - name: Install requirements
     pip:
-    requirements: /var/www/Flaskex/requirements.txt
+      requirements: /var/www/Flaskex/requirements.txt
 
   - name: Start Flaskex
     shell: nohup python app.py
