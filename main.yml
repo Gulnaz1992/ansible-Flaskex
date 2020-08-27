@@ -1,0 +1,36 @@
+---
+- name: Install Flaskex
+  hosts: all
+
+  tasks:
+  - name: install prerequisites
+    package:
+      name:
+      - vim
+      - git
+      state: present
+
+  - name: install Python
+    package:
+      name: python3
+      state: present
+
+  - name: start httpd
+    systemd:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: pull Flaskex
+    git:
+      repo: "{{ flaskex_repo }}"
+      version: "{{ flaskex_branch }}"
+      dest: /var/www/Flaskex/
+
+  - name: Install requirements
+    pip:
+    requirements: /var/www/Flaskex/requirements.txt
+
+  - name: Start Flaskex
+    shell: nohup python app.py
+    
