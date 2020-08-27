@@ -1,2 +1,3 @@
-flaskex_repo: "https://github.com/ikambarov/Flaskex.git"
-flaskex_branch: "master"
+---
+flaskex_repo: "{{ lookup('env', 'FLASK_REPO') }}"
+flaskex_branch: "{{ lookup('env', 'FLASK_BRANCH') }}" 
