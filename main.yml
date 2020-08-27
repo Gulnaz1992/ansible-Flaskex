@@ -35,5 +35,5 @@
       executable: pip3
 
   - name: Start Flaskex
-    shell: nohup python app.py
+    shell: nohup python /var/www/Flaskex/app.py
     
