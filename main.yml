@@ -28,6 +28,9 @@
       repo: "{{ flaskex_repo }}"
       version: "{{ flaskex_branch }}"
       dest: /var/www/Flaskex/
+    when:
+      - flaskex_repo != ''
+      - flaskex_branch != ''
 
   - name: Install requirements
     pip:
